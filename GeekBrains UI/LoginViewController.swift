@@ -14,6 +14,12 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let hideKeyboardGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        scrollView.addGestureRecognizer(hideKeyboardGesture)
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -49,7 +55,10 @@ class LoginViewController: UIViewController {
         }
     }
     
-    // Когда клавиатура появляется
+    @objc func hideKeyboard() {
+        self.scrollView?.endEditing(true)
+    }
+    
     @objc func keyboardWillShow(notification: Notification) {
         guard let keyboardFrameValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else {
             return
@@ -61,12 +70,11 @@ class LoginViewController: UIViewController {
         scrollView?.scrollIndicatorInsets = contentInsets
     }
     
-    //Когда клавиатура исчезает
     @objc func keyboardWillBeHidden(notification: Notification) {
         let contentInsets = UIEdgeInsets.zero
         scrollView?.contentInset = contentInsets
         scrollView?.scrollIndicatorInsets = contentInsets
     }
-    
+
 }
 
