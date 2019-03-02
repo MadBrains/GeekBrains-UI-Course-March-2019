@@ -10,6 +10,9 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
+    private let signInSegueeeeeee = "signInSegue"
+    
+    @IBOutlet weak var signInButton: UIButton!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -18,6 +21,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         let hideKeyboardGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         scrollView.addGestureRecognizer(hideKeyboardGesture)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,15 +47,28 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func signIn(_ sender: Any) {
+        let button = sender as! UIButton
+        if button === signInButton {
+            print("Sign In")
+        }
+        
         if let login = loginTextField.text,
            let password = passwordTextField.text
         {
             if login == "admin" && password == "qwerty" {
-                print("Succeess!")
+                
+                performSegue(withIdentifier: signInSegueeeeeee, sender: self)
+                
             }
             else {
                 print("Failure...")
             }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let greenVC = segue.destination as? GreenViewController {
+            greenVC.login = loginTextField.text
         }
     }
     
@@ -76,5 +93,9 @@ class LoginViewController: UIViewController {
         scrollView?.scrollIndicatorInsets = contentInsets
     }
 
+    //unwindWithSegue
+    @IBAction func unwind(segue: UIStoryboardSegue) {
+        //Do nothing
+    }
 }
 
