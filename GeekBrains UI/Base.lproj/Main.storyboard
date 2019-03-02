@@ -58,7 +58,7 @@
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PVY-RC-Jj6">
                                                 <rect key="frame" x="164" y="306" width="47" height="30"/>
@@ -110,6 +110,7 @@
                     <connections>
                         <outlet property="loginTextField" destination="sxK-A6-O32" id="3iR-aL-sOJ"/>
                         <outlet property="passwordTextField" destination="919-3d-mMi" id="Bam-VQ-Z4g"/>
+                        <outlet property="scrollView" destination="APs-5X-dOg" id="bS7-NM-bwL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
