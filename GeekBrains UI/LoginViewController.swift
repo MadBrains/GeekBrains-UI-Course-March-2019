@@ -10,7 +10,7 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
-    private let signInSegueeeeeee = "signInSegue"
+    private let signInSegueId = "signInSegue"
     
     @IBOutlet weak var signInButton: UIButton!
     @IBOutlet weak var scrollView: UIScrollView!
@@ -21,7 +21,6 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         let hideKeyboardGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         scrollView.addGestureRecognizer(hideKeyboardGesture)
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -40,28 +39,24 @@ class LoginViewController: UIViewController {
         
         NotificationCenter.default.addObserver(
             self,
-            selector: #selector(keyboardWillShow),
+            selector: #selector(keyboardWillBeHidden),
             name: UIResponder.keyboardWillHideNotification,
             object: nil
         )
     }
     
     @IBAction func signIn(_ sender: Any) {
-        let button = sender as! UIButton
-        if button === signInButton {
-            print("Sign In")
-        }
-        
         if let login = loginTextField.text,
            let password = passwordTextField.text
         {
             if login == "admin" && password == "qwerty" {
-                
-                performSegue(withIdentifier: signInSegueeeeeee, sender: self)
-                
+                performSegue(withIdentifier: signInSegueId, sender: self)
             }
             else {
-                print("Failure...")
+                let alert = UIAlertController(title: "Ошибка", message: "Введены неверные данные пользователя", preferredStyle: .alert)
+                let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                alert.addAction(action)
+                present(alert, animated: true, completion: nil)
             }
         }
     }
