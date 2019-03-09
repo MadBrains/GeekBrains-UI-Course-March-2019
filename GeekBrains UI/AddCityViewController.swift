@@ -10,21 +10,25 @@ import UIKit
 
 class AddCityViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+    let cities = ["London", "New York", "Moscow", "Minsk", "Tokio"]
+    var selectedCity: String?
 }
 
 extension AddCityViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return cities.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CityCell", for: indexPath)
+        cell.textLabel?.text = cities[indexPath.row]
+        return cell
     }
 }
 
 extension AddCityViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedCity = cities[indexPath.row]
+        performSegue(withIdentifier: "AddCityUnwindSegue", sender: self)
+    }
 }

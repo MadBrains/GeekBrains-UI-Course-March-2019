@@ -9,20 +9,32 @@
 import UIKit
 
 class CityListViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    @IBOutlet weak var tableView: UITableView!
+    
+    var cities = [String]()
+    
+    @IBAction func addCity(unwindSegue: UIStoryboardSegue) {
+        if let addCityVC = unwindSegue.source as? AddCityViewController,
+           let newCity = addCityVC.selectedCity
+        {
+            if !cities.contains(newCity) {
+                cities.append(newCity)
+                tableView.reloadData()
+            }
+        }
     }
 
 }
 
 extension CityListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return cities.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CityCell", for: indexPath)
+        cell.textLabel?.text = cities[indexPath.row]
+        return cell
     }
 }
 
