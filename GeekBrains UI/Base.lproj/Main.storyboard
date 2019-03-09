@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Login View Controller-->
+        <!--Sign In-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="GeekBrains_UI" customModuleProvider="target" sceneMemberID="viewController">
@@ -107,44 +107,159 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="8gP-vI-cOH"/>
+                    <navigationItem key="navigationItem" title="Sign In" id="98R-xl-H50"/>
                     <connections>
                         <outlet property="loginTextField" destination="sxK-A6-O32" id="3iR-aL-sOJ"/>
                         <outlet property="passwordTextField" destination="919-3d-mMi" id="Bam-VQ-Z4g"/>
                         <outlet property="scrollView" destination="APs-5X-dOg" id="bS7-NM-bwL"/>
                         <outlet property="signInButton" destination="PVY-RC-Jj6" id="CJu-wM-IrM"/>
-                        <segue destination="AoN-Ye-jSN" kind="show" identifier="signInSegue" id="tZv-j4-71B"/>
+                        <segue destination="uck-QX-9Sw" kind="show" identifier="SignInSegue" id="HA5-kN-JKT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3810.4000000000001" y="26.53673163418291"/>
         </scene>
-        <!--Green View Controller-->
-        <scene sceneID="VKs-b2-SYM">
+        <!--City Name-->
+        <scene sceneID="qDy-Jy-x2g">
             <objects>
-                <viewController id="AoN-Ye-jSN" customClass="GreenViewController" customModule="GeekBrains_UI" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Nfd-El-w14">
+                <viewController id="kgX-0b-RRW" customClass="CityViewController" customModule="GeekBrains_UI" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nIJ-4i-fco">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8TV-EE-PQM">
-                                <rect key="frame" x="164" y="134" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="61D-R7-R46">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hcB-gf-LLC">
+                                    <size key="itemSize" width="150" height="150"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="KV1-b3-UFB">
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
                                 <connections>
-                                    <segue destination="Yes-71-6es" kind="unwind" unwindAction="unwindWithSegue:" id="pdC-to-Pkj"/>
+                                    <outlet property="dataSource" destination="kgX-0b-RRW" id="mS6-6l-2up"/>
+                                    <outlet property="delegate" destination="kgX-0b-RRW" id="Iq8-bQ-MVd"/>
                                 </connections>
-                            </button>
+                            </collectionView>
                         </subviews>
-                        <color key="backgroundColor" red="0.83216959239999999" green="0.98548370600000001" blue="0.47333085539999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="SbC-jt-8En"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="61D-R7-R46" firstAttribute="leading" secondItem="nIJ-4i-fco" secondAttribute="leading" id="9pL-NY-Rrq"/>
+                            <constraint firstAttribute="trailing" secondItem="61D-R7-R46" secondAttribute="trailing" id="Mj1-Jp-kHt"/>
+                            <constraint firstAttribute="bottom" secondItem="61D-R7-R46" secondAttribute="bottom" id="gnq-cL-J2Y"/>
+                            <constraint firstItem="61D-R7-R46" firstAttribute="top" secondItem="nIJ-4i-fco" secondAttribute="top" id="yRj-lE-Phu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Q4N-Vd-UaV"/>
                     </view>
+                    <navigationItem key="navigationItem" title="City Name" id="fcS-99-MiG"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Mcn-Cc-ASi" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="Yes-71-6es" userLabel="Exit" sceneMemberID="exit"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="paz-7p-FR4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4653.6000000000004" y="26.53673163418291"/>
+            <point key="canvasLocation" x="4656.8000000000002" y="753.37331334332839"/>
+        </scene>
+        <!--Add City-->
+        <scene sceneID="kuG-fN-WMD">
+            <objects>
+                <viewController id="VK7-mL-og2" customClass="AddCityViewController" customModule="GeekBrains_UI" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FeZ-QE-Pc3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xUG-Pr-fj1">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="71U-J9-O9b">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="71U-J9-O9b" id="aWl-gk-v1u">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="VK7-mL-og2" id="VbX-uV-3rq"/>
+                                    <outlet property="delegate" destination="VK7-mL-og2" id="PDr-c1-4U6"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="xUG-Pr-fj1" secondAttribute="bottom" id="Alr-UU-hrn"/>
+                            <constraint firstItem="xUG-Pr-fj1" firstAttribute="top" secondItem="FeZ-QE-Pc3" secondAttribute="top" id="Ct8-oe-Vhq"/>
+                            <constraint firstAttribute="trailing" secondItem="xUG-Pr-fj1" secondAttribute="trailing" id="VKN-eS-fhc"/>
+                            <constraint firstItem="xUG-Pr-fj1" firstAttribute="leading" secondItem="FeZ-QE-Pc3" secondAttribute="leading" id="xFQ-2H-rFm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="HPC-UT-vrC"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add City" id="1oY-m3-AxF"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hM2-S6-cwC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5479" y="27"/>
+        </scene>
+        <!--City List-->
+        <scene sceneID="dYJ-QI-fLG">
+            <objects>
+                <viewController id="uck-QX-9Sw" customClass="CityListViewController" customModule="GeekBrains_UI" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9x3-w7-XUx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fCx-4g-OGN">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="MtG-Rf-4d4">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MtG-Rf-4d4" id="GPZ-j4-eYf">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="kgX-0b-RRW" kind="show" id="Ha6-WV-tLJ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="uck-QX-9Sw" id="qZ1-gT-wAa"/>
+                                    <outlet property="delegate" destination="uck-QX-9Sw" id="rEU-Wu-ne7"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fCx-4g-OGN" firstAttribute="leading" secondItem="9x3-w7-XUx" secondAttribute="leading" id="83H-kX-rl9"/>
+                            <constraint firstItem="fCx-4g-OGN" firstAttribute="top" secondItem="9x3-w7-XUx" secondAttribute="top" id="BYh-Aq-by2"/>
+                            <constraint firstAttribute="trailing" secondItem="fCx-4g-OGN" secondAttribute="trailing" id="Eua-oq-GGH"/>
+                            <constraint firstAttribute="bottom" secondItem="fCx-4g-OGN" secondAttribute="bottom" id="X99-7J-cnP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jpi-3T-DIB"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="City List" id="8Bf-18-9Yo">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="plQ-JU-1Zs">
+                            <connections>
+                                <segue destination="VK7-mL-og2" kind="show" id="MG3-Og-NS4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Evk-x5-VHi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4657" y="27"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="FQ2-1u-xOa">

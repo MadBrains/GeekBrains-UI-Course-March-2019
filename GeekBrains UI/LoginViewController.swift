@@ -10,7 +10,7 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
-    private let signInSegueId = "signInSegue"
+    private let signInSegueId = "SignInSegue"
     
     @IBOutlet weak var signInButton: UIButton!
     @IBOutlet weak var scrollView: UIScrollView!
@@ -49,7 +49,7 @@ class LoginViewController: UIViewController {
         if let login = loginTextField.text,
            let password = passwordTextField.text
         {
-            if login == "admin" && password == "qwerty" {
+            if login == "a" && password == "1" {
                 performSegue(withIdentifier: signInSegueId, sender: self)
             }
             else {
@@ -58,12 +58,6 @@ class LoginViewController: UIViewController {
                 alert.addAction(action)
                 present(alert, animated: true, completion: nil)
             }
-        }
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let greenVC = segue.destination as? GreenViewController {
-            greenVC.login = loginTextField.text
         }
     }
     
