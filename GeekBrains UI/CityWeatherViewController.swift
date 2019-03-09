@@ -22,6 +22,8 @@ extension CityWeatherViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(forClass: CityWeatherCell.self, for: indexPath)
+        cell.weatherLabel.text = "541 F"
+        cell.timeLabel.text = "1984"
         return cell
     }
 }

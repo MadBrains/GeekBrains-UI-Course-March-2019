@@ -9,5 +9,7 @@
 import UIKit
 
 class CityWeatherCell: UICollectionViewCell {
-    
+    @IBOutlet weak var weatherLabel: UILabel!
+    @IBOutlet weak var weatherIconImageView: UIImageView!
+    @IBOutlet weak var timeLabel: UILabel!
 }
