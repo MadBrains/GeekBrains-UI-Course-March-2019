@@ -9,7 +9,10 @@
 /* Begin PBXBuildFile section */
 		5A3CB15B223397C40098510B /* CityListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3CB15A223397C40098510B /* CityListViewController.swift */; };
 		5A3CB15D2233993A0098510B /* AddCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3CB15C2233993A0098510B /* AddCityViewController.swift */; };
-		5A3CB15F22339A060098510B /* CityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3CB15E22339A060098510B /* CityViewController.swift */; };
+		5A3CB1622233A6820098510B /* CityWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3CB1612233A6820098510B /* CityWeatherViewController.swift */; };
+		5A3CB1642233A6BC0098510B /* CityWeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3CB1632233A6BC0098510B /* CityWeatherCell.swift */; };
+		5A3CB1672233A7500098510B /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3CB1662233A7500098510B /* UITableViewExtension.swift */; };
+		5A3CB1692233A7890098510B /* UICollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3CB1682233A7890098510B /* UICollectionViewExtension.swift */; };
 		5A8C37FA222A6C1500087447 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8C37F9222A6C1500087447 /* AppDelegate.swift */; };
 		5A8C37FC222A6C1500087447 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8C37FB222A6C1500087447 /* LoginViewController.swift */; };
 		5A8C37FF222A6C1500087447 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A8C37FD222A6C1500087447 /* Main.storyboard */; };
@@ -20,7 +23,10 @@
 /* Begin PBXFileReference section */
 		5A3CB15A223397C40098510B /* CityListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityListViewController.swift; sourceTree = "<group>"; };
 		5A3CB15C2233993A0098510B /* AddCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCityViewController.swift; sourceTree = "<group>"; };
-		5A3CB15E22339A060098510B /* CityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewController.swift; sourceTree = "<group>"; };
+		5A3CB1612233A6820098510B /* CityWeatherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityWeatherViewController.swift; sourceTree = "<group>"; };
+		5A3CB1632233A6BC0098510B /* CityWeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityWeatherCell.swift; sourceTree = "<group>"; };
+		5A3CB1662233A7500098510B /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
+		5A3CB1682233A7890098510B /* UICollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtension.swift; sourceTree = "<group>"; };
 		5A8C37F6222A6C1500087447 /* GeekBrains UI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GeekBrains UI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A8C37F9222A6C1500087447 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A8C37FB222A6C1500087447 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -51,6 +57,15 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		5A3CB1652233A71D0098510B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				5A3CB1662233A7500098510B /* UITableViewExtension.swift */,
+				5A3CB1682233A7890098510B /* UICollectionViewExtension.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		5A8C37ED222A6C1500087447 = {
 			isa = PBXGroup;
 			children = (
@@ -73,10 +88,12 @@
 				5A8C37F9222A6C1500087447 /* AppDelegate.swift */,
 				5A8C37FD222A6C1500087447 /* Main.storyboard */,
 				5A3CB16022339A730098510B /* Resources */,
+				5A3CB1652233A71D0098510B /* Helpers */,
 				5A8C37FB222A6C1500087447 /* LoginViewController.swift */,
 				5A3CB15A223397C40098510B /* CityListViewController.swift */,
 				5A3CB15C2233993A0098510B /* AddCityViewController.swift */,
-				5A3CB15E22339A060098510B /* CityViewController.swift */,
+				5A3CB1612233A6820098510B /* CityWeatherViewController.swift */,
+				5A3CB1632233A6BC0098510B /* CityWeatherCell.swift */,
 			);
 			path = "GeekBrains UI";
 			sourceTree = "<group>";
@@ -153,10 +170,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A3CB15D2233993A0098510B /* AddCityViewController.swift in Sources */,
+				5A3CB1622233A6820098510B /* CityWeatherViewController.swift in Sources */,
 				5A8C37FC222A6C1500087447 /* LoginViewController.swift in Sources */,
+				5A3CB1642233A6BC0098510B /* CityWeatherCell.swift in Sources */,
+				5A3CB1692233A7890098510B /* UICollectionViewExtension.swift in Sources */,
 				5A8C37FA222A6C1500087447 /* AppDelegate.swift in Sources */,
 				5A3CB15B223397C40098510B /* CityListViewController.swift in Sources */,
-				5A3CB15F22339A060098510B /* CityViewController.swift in Sources */,
+				5A3CB1672233A7500098510B /* UITableViewExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

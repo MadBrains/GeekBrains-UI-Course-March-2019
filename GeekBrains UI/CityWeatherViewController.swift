@@ -8,23 +8,24 @@
 
 import UIKit
 
-class CityViewController: UIViewController {
+class CityWeatherViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 }
 
-extension CityViewController: UICollectionViewDataSource {
+extension CityWeatherViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
+        return 3
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+        let cell = collectionView.dequeueReusableCell(forClass: CityWeatherCell.self, for: indexPath)
+        return cell
     }
 }
 
-extension CityViewController: UICollectionViewDelegate {
+extension CityWeatherViewController: UICollectionViewDelegate {
     
 }
