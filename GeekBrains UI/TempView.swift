@@ -8,29 +8,39 @@
 
 import UIKit
 
-class TempView: UIView {
+class AvatarView: UIView {
     
     @IBInspectable var tempColor: UIColor = UIColor.red
     @IBInspectable var tempFloat: CGFloat = 1.0
     
-    override func draw(_ rect: CGRect) {
-        super.draw(rect)
-        guard let context = UIGraphicsGetCurrentContext() else {
-            return
+    var image: UIImage? {
+        didSet {
+            imageView.image = image
         }
-        context.setFillColor(tempColor.cgColor)
-        context.move(to: CGPoint(x: 40, y: 20))
-        context.addLine(to: CGPoint(x: 45, y: 40))
-        context.addLine(to: CGPoint(x: 65, y: 40))
-        context.addLine(to: CGPoint(x: 50, y: 50))
-        context.addLine(to: CGPoint(x: 60, y: 70))
-        context.addLine(to: CGPoint(x: 40, y: 55))
-        context.addLine(to: CGPoint(x: 20, y: 70))
-        context.addLine(to: CGPoint(x: 30, y: 50))
-        context.addLine(to: CGPoint(x: 15, y: 40))
-        context.addLine(to: CGPoint(x: 35, y: 40))
-        context.closePath()
-        context.fillPath()
     }
+    
+    private var imageView: UIImageView!
+    
+    @IBInspectable var shadowOffset: CGSize = CGSize.zero
+    @IBInspectable var shadowOpacity: Float = 0
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        imageView = UIImageView(frame: bounds)
+        imageView.clipsToBounds = true
+        addSubview(imageView)
+        
+        layer.shadowOffset = shadowOffset
+        layer.shadowOpacity = shadowOpacity
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        imageView.frame = bounds
+        layer.cornerRadius = bounds.width / 2
+        imageView.layer.cornerRadius = bounds.width / 2
+    }
+    
     
 }

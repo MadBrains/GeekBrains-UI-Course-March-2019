@@ -273,16 +273,37 @@
                                     <constraint firstAttribute="height" constant="50" id="PRi-Pm-Ufu"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NBa-Xc-hrA" customClass="AvatarView" customModule="GeekBrains_UI" customModuleProvider="target">
+                                <rect key="frame" x="67" y="229" width="128" height="128"/>
+                                <color key="backgroundColor" red="0.83216959239999999" green="0.98548370600000001" blue="0.47333085539999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="NBa-Xc-hrA" secondAttribute="height" multiplier="1:1" id="ts0-Uw-gFt"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="10" height="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="KaV-1b-reO" firstAttribute="leading" secondItem="CEo-pN-0ns" secondAttribute="leading" id="84T-Oe-heA"/>
                             <constraint firstItem="KaV-1b-reO" firstAttribute="top" secondItem="CEo-pN-0ns" secondAttribute="top" id="HAV-a3-cZN"/>
+                            <constraint firstItem="CEo-pN-0ns" firstAttribute="bottom" secondItem="NBa-Xc-hrA" secondAttribute="bottom" constant="310" id="MhC-NR-U9J"/>
+                            <constraint firstItem="NBa-Xc-hrA" firstAttribute="leading" secondItem="CEo-pN-0ns" secondAttribute="leading" constant="67" id="Ryw-FI-L65"/>
                             <constraint firstItem="CEo-pN-0ns" firstAttribute="trailing" secondItem="KaV-1b-reO" secondAttribute="trailing" id="TWY-kN-cNe"/>
+                            <constraint firstItem="NBa-Xc-hrA" firstAttribute="top" secondItem="KaV-1b-reO" secondAttribute="bottom" constant="159" id="i8l-Ej-yrf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CEo-pN-0ns"/>
                     </view>
                     <navigationItem key="navigationItem" title="Temp" id="FgE-yB-cP4"/>
+                    <connections>
+                        <outlet property="tempView" destination="NBa-Xc-hrA" id="e19-uX-1iQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Rz-HJ-l6X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
