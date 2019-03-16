@@ -9,9 +9,14 @@
 import UIKit
 
 class CityListViewController: UIViewController {
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet private weak var tableView: UITableView!
     
-    var cities = [String]()
+    private var cities = [String]()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
     
     @IBAction func addCity(unwindSegue: UIStoryboardSegue) {
         if let addCityVC = unwindSegue.source as? AddCityViewController,
@@ -20,6 +25,17 @@ class CityListViewController: UIViewController {
             if !cities.contains(newCity) {
                 cities.append(newCity)
                 tableView.reloadData()
+            }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? AddCityViewController {
+            vc.addCity = { newCity in
+                if !self.cities.contains(newCity) {
+                    self.cities.append(newCity)
+                    self.tableView.reloadData()
+                }
             }
         }
     }

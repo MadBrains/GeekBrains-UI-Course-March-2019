@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5A3B76DE223812B7005E3998 /* CALayerExtansion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3B76DD223812B7005E3998 /* CALayerExtansion.swift */; };
+		5A3B76E2223828D0005E3998 /* AddCityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3B76E1223828D0005E3998 /* AddCityCell.swift */; };
 		5A3CB15B223397C40098510B /* CityListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3CB15A223397C40098510B /* CityListViewController.swift */; };
 		5A3CB15D2233993A0098510B /* AddCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3CB15C2233993A0098510B /* AddCityViewController.swift */; };
 		5A3CB1622233A6820098510B /* CityWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3CB1612233A6820098510B /* CityWeatherViewController.swift */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		5A3B76DD223812B7005E3998 /* CALayerExtansion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayerExtansion.swift; sourceTree = "<group>"; };
+		5A3B76E1223828D0005E3998 /* AddCityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCityCell.swift; sourceTree = "<group>"; };
 		5A3CB15A223397C40098510B /* CityListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityListViewController.swift; sourceTree = "<group>"; };
 		5A3CB15C2233993A0098510B /* AddCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCityViewController.swift; sourceTree = "<group>"; };
 		5A3CB1612233A6820098510B /* CityWeatherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityWeatherViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				5A3CB16C2233C1120098510B /* TempView.swift */,
 				5A3CB1722233D3A80098510B /* SelectDayControl.swift */,
 				5A3B76DD223812B7005E3998 /* CALayerExtansion.swift */,
+				5A3B76E1223828D0005E3998 /* AddCityCell.swift */,
 			);
 			path = "GeekBrains UI";
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 				5A3CB1642233A6BC0098510B /* CityWeatherCell.swift in Sources */,
 				5A3CB1692233A7890098510B /* UICollectionViewExtension.swift in Sources */,
 				5A3B76DE223812B7005E3998 /* CALayerExtansion.swift in Sources */,
+				5A3B76E2223828D0005E3998 /* AddCityCell.swift in Sources */,
 				5A8C37FA222A6C1500087447 /* AppDelegate.swift in Sources */,
 				5A3CB15B223397C40098510B /* CityListViewController.swift in Sources */,
 				5A3CB1672233A7500098510B /* UITableViewExtension.swift in Sources */,

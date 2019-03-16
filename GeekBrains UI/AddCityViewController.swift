@@ -9,6 +9,8 @@
 import UIKit
 
 class AddCityViewController: UIViewController {
+    
+    var addCity: ((String) -> Void)?
 
     let cities = ["London", "New York", "Moscow", "Minsk", "Tokio"]
     var selectedCity: String?
@@ -20,15 +22,14 @@ extension AddCityViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CityCell", for: indexPath)
-        cell.textLabel?.text = cities[indexPath.row]
+        let cell = tableView.dequeueReusableCell(forClass: AddCityCell.self, for: indexPath)
+        cell.cityLabel?.text = cities[indexPath.row]
+        
+        cell.addCityTaped = { cityName in
+            self.addCity?(cityName)
+        }
+        
         return cell
     }
-}
-
-extension AddCityViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedCity = cities[indexPath.row]
-        performSegue(withIdentifier: "AddCityUnwindSegue", sender: self)
-    }
+    
 }

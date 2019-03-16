@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="X9D-e1-blT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tXb-wI-MOg">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -113,12 +113,11 @@
                         <outlet property="passwordTextField" destination="919-3d-mMi" id="Bam-VQ-Z4g"/>
                         <outlet property="scrollView" destination="APs-5X-dOg" id="bS7-NM-bwL"/>
                         <outlet property="signInButton" destination="PVY-RC-Jj6" id="CJu-wM-IrM"/>
-                        <segue destination="uck-QX-9Sw" kind="show" identifier="SignInSegue" id="HA5-kN-JKT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3810.4000000000001" y="26.53673163418291"/>
+            <point key="canvasLocation" x="3162" y="828"/>
         </scene>
         <!--City Name-->
         <scene sceneID="qDy-Jy-x2g">
@@ -215,22 +214,39 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CityCell" textLabel="f6E-6n-xr8" style="IBUITableViewCellStyleDefault" id="71U-J9-O9b">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddCityCell" rowHeight="55" id="71U-J9-O9b" customClass="AddCityCell" customModule="GeekBrains_UI" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="71U-J9-O9b" id="aWl-gk-v1u">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="54.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="f6E-6n-xr8">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CdI-kH-tq0">
+                                                    <rect key="frame" x="15" y="6" width="42" height="32"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mQ8-6Y-Frv">
+                                                    <rect key="frame" x="314" y="12" width="46" height="30"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <connections>
+                                                        <action selector="addCity:" destination="71U-J9-O9b" eventType="touchUpInside" id="2HI-A2-ZSv"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="mQ8-6Y-Frv" firstAttribute="top" secondItem="aWl-gk-v1u" secondAttribute="top" constant="12" id="7Wq-oE-d25"/>
+                                                <constraint firstAttribute="bottom" secondItem="mQ8-6Y-Frv" secondAttribute="bottom" constant="12.5" id="FTD-TZ-jtJ"/>
+                                                <constraint firstAttribute="trailing" secondItem="mQ8-6Y-Frv" secondAttribute="trailing" constant="15" id="L6G-Io-PrH"/>
+                                                <constraint firstAttribute="bottom" secondItem="CdI-kH-tq0" secondAttribute="bottom" constant="16.5" id="iqg-2Z-HyI"/>
+                                                <constraint firstItem="CdI-kH-tq0" firstAttribute="leading" secondItem="aWl-gk-v1u" secondAttribute="leading" constant="15" id="n8P-ZQ-ofr"/>
+                                                <constraint firstItem="CdI-kH-tq0" firstAttribute="top" secondItem="aWl-gk-v1u" secondAttribute="top" constant="6" id="yS6-2A-EC4"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cityLabel" destination="CdI-kH-tq0" id="AUF-H4-X5Q"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -256,7 +272,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hM2-S6-cwC" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Uoc-qg-LbG" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="5479" y="27"/>
+            <point key="canvasLocation" x="5477.6000000000004" y="26.53673163418291"/>
         </scene>
         <!--Temp-->
         <scene sceneID="Nih-Jd-2e7">
@@ -383,12 +399,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Qz0-xZ-xaP"/>
+                        <segue destination="uck-QX-9Sw" kind="relationship" relationship="rootViewController" id="hCZ-x2-31s"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9V6-Vv-U5H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3079" y="27"/>
+            <point key="canvasLocation" x="3846" y="27"/>
         </scene>
     </scenes>
     <resources>
