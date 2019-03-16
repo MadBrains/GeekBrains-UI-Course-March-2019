@@ -13,18 +13,18 @@ extension UITableView {
     func registerNib(forClass neededClass: AnyClass) {
         register(UINib(nibName: String(describing: neededClass), bundle: Bundle.main), forCellReuseIdentifier: String(describing: neededClass))
     }
-//    
-//    func registerCell(forClass neededClass: AnyClass) {
-//        register(neededClass, forCellReuseIdentifier: String(describing: neededClass))
-//    }
-//    
-//    public func register(nib: UINib?, forHeaderFooterViewClass neededClass: AnyClass) {
-//        register(neededClass, forHeaderFooterViewReuseIdentifier: String(describing: neededClass))
-//    }
-//    
-//    public func register(forHeaderFooterViewClass neededClass: AnyClass) {
-//        register(neededClass, forHeaderFooterViewReuseIdentifier: String(describing: neededClass))
-//    }
+    
+    func registerCell(forClass neededClass: AnyClass) {
+        register(neededClass, forCellReuseIdentifier: String(describing: neededClass))
+    }
+    
+    public func register(nib: UINib?, forHeaderFooterViewClass neededClass: AnyClass) {
+        register(neededClass, forHeaderFooterViewReuseIdentifier: String(describing: neededClass))
+    }
+    
+    public func register(forHeaderFooterViewClass neededClass: AnyClass) {
+        register(neededClass, forHeaderFooterViewReuseIdentifier: String(describing: neededClass))
+    }
     
     func dequeueReusableCell<T: UITableViewCell> (forClass neededClass: T.Type, for indexPath: IndexPath) -> T {
         return dequeueReusableCell(withIdentifier: String(describing: neededClass), for: indexPath) as! T
