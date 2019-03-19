@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kgX-0b-RRW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tXb-wI-MOg">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -113,11 +113,12 @@
                         <outlet property="passwordTextField" destination="919-3d-mMi" id="Bam-VQ-Z4g"/>
                         <outlet property="scrollView" destination="APs-5X-dOg" id="bS7-NM-bwL"/>
                         <outlet property="signInButton" destination="PVY-RC-Jj6" id="CJu-wM-IrM"/>
+                        <segue destination="uck-QX-9Sw" kind="show" identifier="SignInSegue" id="IJU-vd-67Q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3162" y="828"/>
+            <point key="canvasLocation" x="3866" y="27"/>
         </scene>
         <!--City Name-->
         <scene sceneID="qDy-Jy-x2g">
@@ -133,26 +134,26 @@
                                 <collectionViewLayout key="collectionViewLayout" id="c7f-gW-dR6" customClass="WeatherCollectionViewLayout" customModule="GeekBrains_UI" customModuleProvider="target"/>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CityWeatherCell" id="KV1-b3-UFB" customClass="CityWeatherCell" customModule="GeekBrains_UI" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="137" height="107"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="137" height="107"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bIS-Qu-3Lq">
-                                                    <rect key="frame" x="0.0" y="8" width="150" height="21"/>
+                                                    <rect key="frame" x="0.0" y="8" width="137" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n89-AG-wsf">
-                                                    <rect key="frame" x="0.0" y="121" width="150" height="21"/>
+                                                    <rect key="frame" x="0.0" y="78" width="137" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="019-weathercock" translatesAutoresizingMaskIntoConstraints="NO" id="EAN-3M-Gcx">
-                                                    <rect key="frame" x="15" y="39" width="120" height="72"/>
+                                                    <rect key="frame" x="15" y="39" width="107" height="29"/>
                                                 </imageView>
                                             </subviews>
                                         </view>
@@ -169,6 +170,7 @@
                                             <constraint firstAttribute="trailing" secondItem="EAN-3M-Gcx" secondAttribute="trailing" constant="15" id="y39-Do-GnB"/>
                                             <constraint firstAttribute="trailing" secondItem="n89-AG-wsf" secondAttribute="trailing" id="z2Q-uq-y0U"/>
                                         </constraints>
+                                        <size key="customSize" width="137" height="107"/>
                                         <connections>
                                             <outlet property="timeLabel" destination="n89-AG-wsf" id="657-Kg-LAP"/>
                                             <outlet property="weatherIconImageView" destination="EAN-3M-Gcx" id="ZQO-Fi-oo0"/>
@@ -269,86 +271,6 @@
             </objects>
             <point key="canvasLocation" x="5477.6000000000004" y="26.53673163418291"/>
         </scene>
-        <!--Temp-->
-        <scene sceneID="Nih-Jd-2e7">
-            <objects>
-                <viewController id="X9D-e1-blT" customClass="TViewController" customModule="GeekBrains_UI" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="NJx-3z-mqx">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KaV-1b-reO" customClass="SelectDayControl" customModule="GeekBrains_UI" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="20" width="375" height="50"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="PRi-Pm-Ufu"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NBa-Xc-hrA" customClass="AvatarView" customModule="GeekBrains_UI" customModuleProvider="target">
-                                <rect key="frame" x="67" y="229" width="128" height="128"/>
-                                <color key="backgroundColor" red="0.83216959239999999" green="0.98548370600000001" blue="0.47333085539999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="NBa-Xc-hrA" secondAttribute="height" multiplier="1:1" id="ts0-Uw-gFt"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                        <size key="value" width="10" height="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                        <real key="value" value="0.5"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="KaV-1b-reO" firstAttribute="leading" secondItem="CEo-pN-0ns" secondAttribute="leading" id="84T-Oe-heA"/>
-                            <constraint firstItem="KaV-1b-reO" firstAttribute="top" secondItem="CEo-pN-0ns" secondAttribute="top" id="HAV-a3-cZN"/>
-                            <constraint firstItem="CEo-pN-0ns" firstAttribute="bottom" secondItem="NBa-Xc-hrA" secondAttribute="bottom" constant="310" id="MhC-NR-U9J"/>
-                            <constraint firstItem="NBa-Xc-hrA" firstAttribute="leading" secondItem="CEo-pN-0ns" secondAttribute="leading" constant="67" id="Ryw-FI-L65"/>
-                            <constraint firstItem="CEo-pN-0ns" firstAttribute="trailing" secondItem="KaV-1b-reO" secondAttribute="trailing" id="TWY-kN-cNe"/>
-                            <constraint firstItem="NBa-Xc-hrA" firstAttribute="top" secondItem="KaV-1b-reO" secondAttribute="bottom" constant="159" id="i8l-Ej-yrf"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="CEo-pN-0ns"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Temp" id="FgE-yB-cP4"/>
-                    <connections>
-                        <outlet property="tempView" destination="NBa-Xc-hrA" id="e19-uX-1iQ"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5Rz-HJ-l6X" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="7540" y="17.541229385307346"/>
-        </scene>
-        <!--Table View Controller-->
-        <scene sceneID="Sl0-jE-hZ4">
-            <objects>
-                <tableViewController id="vAL-Z0-gm4" customClass="TableViewController" customModule="GeekBrains_UI" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="89f-rt-tQ4">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableViewCell" id="xhA-VS-Gxf" customClass="TableViewCell" customModule="GeekBrains_UI" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xhA-VS-Gxf" id="Tmm-lE-cc5">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <color key="backgroundColor" red="0.83216959239999999" green="0.98548370600000001" blue="0.47333085539999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="vAL-Z0-gm4" id="sLC-bn-8Qt"/>
-                            <outlet property="delegate" destination="vAL-Z0-gm4" id="y3c-lJ-6KO"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yyw-B5-nUx" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="8444" y="981"/>
-        </scene>
         <!--City List-->
         <scene sceneID="dYJ-QI-fLG">
             <objects>
@@ -428,12 +350,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="uck-QX-9Sw" kind="relationship" relationship="rootViewController" id="hCZ-x2-31s"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ruk-ai-I71"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9V6-Vv-U5H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3846" y="27"/>
+            <point key="canvasLocation" x="3076" y="18"/>
         </scene>
     </scenes>
     <resources>
