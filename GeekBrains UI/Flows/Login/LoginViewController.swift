@@ -49,7 +49,7 @@ class LoginViewController: UIViewController {
         if let login = loginTextField.text,
            let password = passwordTextField.text
         {
-            if login == "a" && password == "1" {
+            if login == "1" && password == "1" {
                 performSegue(withIdentifier: signInSegueId, sender: self)
             }
             else {
