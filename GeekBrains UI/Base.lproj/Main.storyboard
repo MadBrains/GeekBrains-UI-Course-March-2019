@@ -307,6 +307,7 @@
                     <navigationItem key="navigationItem" id="vOP-TI-ppa"/>
                     <connections>
                         <outlet property="tempView" destination="8dx-6y-TCK" id="TEr-WL-Xus"/>
+                        <segue destination="yZh-SH-w6h" kind="custom" identifier="goToBlueVC" customClass="CustomSegue" customModule="GeekBrains_UI" customModuleProvider="target" id="Fig-yM-N4C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="erz-P1-MEG" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -15,34 +15,15 @@ class TempViewController: UIViewController {
     
     @IBAction func tap(_ sender: Any) {
         
-        let newVC = RedViewController()
-        newVC.transitioningDelegate = self
-        present(newVC, animated: true)
+        performSegue(withIdentifier: "goToBlueVC", sender: self)
     }
 }
 
-extension TempViewController: UIViewControllerTransitioningDelegate {
-    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return AnimatedTransitioning()
-    }
-    
-    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return AnimatedTransitioning()
-    }
-}
-
-
-class AnimatedTransitioning: NSObject, UIViewControllerAnimatedTransitioning {
-    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return 5.0
-    }
-    
-    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
-        guard let sourceVC = transitionContext.viewController(forKey: .from),
-              let destinationVC = transitionContext.viewController(forKey: .to)
-        else {
-            return
-        }
+class CustomSegue: UIStoryboardSegue {
+    override func perform() {
+        guard let containerView = source.view.superview else { return }
+        let sourceVC = source
+        let destinationVC = destination
         
         let sourceViewTargetFrame = CGRect(x: 0,
                                            y: sourceVC.view.frame.height,
@@ -51,7 +32,7 @@ class AnimatedTransitioning: NSObject, UIViewControllerAnimatedTransitioning {
         let destinationViewTargetFrame = sourceVC.view.frame
         
         
-        transitionContext.containerView.addSubview(destinationVC.view)
+        containerView.addSubview(destinationVC.view)
         
         destinationVC.view.frame = CGRect(x: 0,
                                           y: -destinationVC.view.frame.height,
@@ -59,12 +40,50 @@ class AnimatedTransitioning: NSObject, UIViewControllerAnimatedTransitioning {
                                           height: destinationVC.view.frame.height)
         
         
-        UIView.animate(withDuration: transitionDuration(using: transitionContext), animations: {
+        UIView.animate(withDuration: 5, animations: {
             sourceVC.view.frame = sourceViewTargetFrame
             destinationVC.view.frame = destinationViewTargetFrame
         }, completion: { finished in
-            sourceVC.removeFromParent()
-            transitionContext.completeTransition(finished)
+            self.source.present(self.destination, animated: false, completion: nil)
         })
+
     }
 }
+
+
+
+//class AnimatedTransitioning: NSObject, UIViewControllerAnimatedTransitioning {
+//    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+//        return 5.0
+//    }
+//
+//    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+//        guard let sourceVC = transitionContext.viewController(forKey: .from),
+//              let destinationVC = transitionContext.viewController(forKey: .to)
+//        else {
+//            return
+//        }
+//
+//        let sourceViewTargetFrame = CGRect(x: 0,
+//                                           y: sourceVC.view.frame.height,
+//                                           width: sourceVC.view.frame.width,
+//                                           height: sourceVC.view.frame.height)
+//        let destinationViewTargetFrame = sourceVC.view.frame
+//
+//
+//        transitionContext.containerView.addSubview(destinationVC.view)
+//
+//        destinationVC.view.frame = CGRect(x: 0,
+//                                          y: -destinationVC.view.frame.height,
+//                                          width: destinationVC.view.frame.width,
+//                                          height: destinationVC.view.frame.height)
+//
+//
+//        UIView.animate(withDuration: transitionDuration(using: transitionContext), animations: {
+//            sourceVC.view.frame = sourceViewTargetFrame
+//            destinationVC.view.frame = destinationViewTargetFrame
+//        }, completion: { finished in
+//            transitionContext.completeTransition(finished)
+//        })
+//    }
+//}
