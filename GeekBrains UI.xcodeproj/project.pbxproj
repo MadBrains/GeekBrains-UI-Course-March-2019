@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A3916BD224622D4003326FD /* TempViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3916BC224622D4003326FD /* TempViewController.swift */; };
+		5A3916BF224622FA003326FD /* TempView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3916BE224622FA003326FD /* TempView.swift */; };
 		5A3B76E2223828D0005E3998 /* AddCityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3B76E1223828D0005E3998 /* AddCityCell.swift */; };
 		5A3CB15B223397C40098510B /* CityListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3CB15A223397C40098510B /* CityListViewController.swift */; };
 		5A3CB15D2233993A0098510B /* AddCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3CB15C2233993A0098510B /* AddCityViewController.swift */; };
@@ -25,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5A3916BC224622D4003326FD /* TempViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempViewController.swift; sourceTree = "<group>"; };
+		5A3916BE224622FA003326FD /* TempView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempView.swift; sourceTree = "<group>"; };
 		5A3B76E1223828D0005E3998 /* AddCityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCityCell.swift; sourceTree = "<group>"; };
 		5A3CB15A223397C40098510B /* CityListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityListViewController.swift; sourceTree = "<group>"; };
 		5A3CB15C2233993A0098510B /* AddCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCityViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +66,15 @@
 				5A3CB1722233D3A80098510B /* SelectDayControl.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		5A3916BB224622AD003326FD /* Temp */ = {
+			isa = PBXGroup;
+			children = (
+				5A3916BC224622D4003326FD /* TempViewController.swift */,
+				5A3916BE224622FA003326FD /* TempView.swift */,
+			);
+			path = Temp;
 			sourceTree = "<group>";
 		};
 		5A3CB16022339A730098510B /* Resources */ = {
@@ -132,6 +145,7 @@
 		5A8C37F8222A6C1500087447 /* GeekBrains UI */ = {
 			isa = PBXGroup;
 			children = (
+				5A3916BB224622AD003326FD /* Temp */,
 				5A8C37F9222A6C1500087447 /* AppDelegate.swift */,
 				5A8C37FD222A6C1500087447 /* Main.storyboard */,
 				5A856401224148A4004534CF /* Flows */,
@@ -221,12 +235,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A3916BF224622FA003326FD /* TempView.swift in Sources */,
 				5A3CB15D2233993A0098510B /* AddCityViewController.swift in Sources */,
 				5A3CB16D2233C1120098510B /* AvatarView.swift in Sources */,
 				5A3CB1622233A6820098510B /* CityWeatherViewController.swift in Sources */,
 				5A8C37FC222A6C1500087447 /* LoginViewController.swift in Sources */,
 				5A3CB1642233A6BC0098510B /* CityWeatherCell.swift in Sources */,
 				5A8CA47B223D0B630035809A /* WeatherCollectionViewLayout.swift in Sources */,
+				5A3916BD224622D4003326FD /* TempViewController.swift in Sources */,
 				5A3CB1692233A7890098510B /* UICollectionViewExtension.swift in Sources */,
 				5A3B76E2223828D0005E3998 /* AddCityCell.swift in Sources */,
 				5A8C37FA222A6C1500087447 /* AppDelegate.swift in Sources */,
