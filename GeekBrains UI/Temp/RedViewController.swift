@@ -22,6 +22,6 @@ class RedViewController: UIViewController {
     }
 
     @objc func tap(sender: UIButton) {
-        navigationController?.popViewController(animated: true)
+        dismiss(animated: true)
     }
 }
