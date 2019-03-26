@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5A3916BD224622D4003326FD /* TempViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3916BC224622D4003326FD /* TempViewController.swift */; };
 		5A3916BF224622FA003326FD /* TempView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3916BE224622FA003326FD /* TempView.swift */; };
+		5A3916C2224A8857003326FD /* RedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3916C1224A8857003326FD /* RedViewController.swift */; };
 		5A3B76E2223828D0005E3998 /* AddCityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3B76E1223828D0005E3998 /* AddCityCell.swift */; };
 		5A3CB15B223397C40098510B /* CityListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3CB15A223397C40098510B /* CityListViewController.swift */; };
 		5A3CB15D2233993A0098510B /* AddCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3CB15C2233993A0098510B /* AddCityViewController.swift */; };
@@ -29,6 +30,7 @@
 /* Begin PBXFileReference section */
 		5A3916BC224622D4003326FD /* TempViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempViewController.swift; sourceTree = "<group>"; };
 		5A3916BE224622FA003326FD /* TempView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempView.swift; sourceTree = "<group>"; };
+		5A3916C1224A8857003326FD /* RedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedViewController.swift; sourceTree = "<group>"; };
 		5A3B76E1223828D0005E3998 /* AddCityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCityCell.swift; sourceTree = "<group>"; };
 		5A3CB15A223397C40098510B /* CityListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityListViewController.swift; sourceTree = "<group>"; };
 		5A3CB15C2233993A0098510B /* AddCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCityViewController.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 			children = (
 				5A3916BC224622D4003326FD /* TempViewController.swift */,
 				5A3916BE224622FA003326FD /* TempView.swift */,
+				5A3916C1224A8857003326FD /* RedViewController.swift */,
 			);
 			path = Temp;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 				5A3916BD224622D4003326FD /* TempViewController.swift in Sources */,
 				5A3CB1692233A7890098510B /* UICollectionViewExtension.swift in Sources */,
 				5A3B76E2223828D0005E3998 /* AddCityCell.swift in Sources */,
+				5A3916C2224A8857003326FD /* RedViewController.swift in Sources */,
 				5A8C37FA222A6C1500087447 /* AppDelegate.swift in Sources */,
 				5A3CB15B223397C40098510B /* CityListViewController.swift in Sources */,
 				5A3CB1672233A7500098510B /* UITableViewExtension.swift in Sources */,

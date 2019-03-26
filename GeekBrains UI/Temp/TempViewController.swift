@@ -11,56 +11,60 @@ import UIKit
 class TempViewController: UIViewController {
 
     @IBOutlet weak var tempView: TempView!
-    @IBOutlet weak var redView: UIView!
     
-    var animator: UIViewPropertyAnimator?
     
-    var friendList = [String]()
-    var printFriendHeader = [String: [String]]()
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    @IBAction func tap(_ sender: Any) {
         
-        for friend in friendList {
-            let letterString = String(friend.first!)
-            var friendsArray = printFriendHeader[letterString] ?? []
-            friendsArray.append(friend)
-            printFriendHeader[letterString] = friendsArray
+        let newVC = RedViewController()
+        newVC.transitioningDelegate = self
+        present(newVC, animated: true)
+    }
+}
+
+extension TempViewController: UIViewControllerTransitioningDelegate {
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return AnimatedTransitioning()
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return AnimatedTransitioning()
+    }
+}
+
+
+class AnimatedTransitioning: NSObject, UIViewControllerAnimatedTransitioning {
+    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+        return 5.0
+    }
+    
+    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+        guard let sourceVC = transitionContext.viewController(forKey: .from),
+              let destinationVC = transitionContext.viewController(forKey: .to)
+        else {
+            return
         }
         
-//        animator = UIViewPropertyAnimator(duration: 6, curve: .linear) {
-//            self.tempView.center.y += 200
-//        }
-//
-//        animator?.startAnimation()
+        let sourceViewTargetFrame = CGRect(x: 0,
+                                           y: sourceVC.view.frame.height,
+                                           width: sourceVC.view.frame.width,
+                                           height: sourceVC.view.frame.height)
+        let destinationViewTargetFrame = sourceVC.view.frame
+        
+        
+        transitionContext.containerView.addSubview(destinationVC.view)
+        
+        destinationVC.view.frame = CGRect(x: 0,
+                                          y: -destinationVC.view.frame.height,
+                                          width: destinationVC.view.frame.width,
+                                          height: destinationVC.view.frame.height)
+        
+        
+        UIView.animate(withDuration: transitionDuration(using: transitionContext), animations: {
+            sourceVC.view.frame = sourceViewTargetFrame
+            destinationVC.view.frame = destinationViewTargetFrame
+        }, completion: { finished in
+            sourceVC.removeFromParent()
+            transitionContext.completeTransition(finished)
+        })
     }
-    
-    @IBAction func pause(_ sender: Any) {
-//        animator?.pauseAnimation()
-    }
-    @IBAction func `continue`(_ sender: Any) {
-//        animator?.continueAnimation(withTimingParameters: nil, durationFactor: 0)
-    }
-    @IBAction func stop(_ sender: Any) {
-//        animator?.stopAnimation(false)
-    }
-    
-    @IBAction func pan(_ recognizer: UIPanGestureRecognizer) {
-        switch recognizer.state {
-        case .began:
-            animator = UIViewPropertyAnimator(duration: 6, curve: .linear) {
-                self.tempView.center.y += 400
-            }
-            animator?.pauseAnimation()
-        case .changed:
-            
-            let translation = recognizer.translation(in: self.view)
-            animator?.fractionComplete = translation.y / 300
-            
-        case .ended:
-            animator?.continueAnimation(withTimingParameters: nil, durationFactor: 0)
-        default: return
-        }
-    }
-    
 }
