@@ -50,7 +50,12 @@ class LoginViewController: UIViewController {
            let password = passwordTextField.text
         {
             if login == "1" && password == "1" {
-                performSegue(withIdentifier: signInSegueId, sender: self)
+                UIView.animate(withDuration: 5, animations: {
+                    self.signInButton.backgroundColor = .red
+                }) { _ in
+                    self.performSegue(withIdentifier: self.signInSegueId, sender: self)
+                }
+                
             }
             else {
                 let alert = UIAlertController(title: "Ошибка", message: "Введены неверные данные пользователя", preferredStyle: .alert)
